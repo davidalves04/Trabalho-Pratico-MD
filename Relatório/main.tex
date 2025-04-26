@@ -1,0 +1,90 @@
+\documentclass[10pt,a4paper,titlepage,twoside,openright]{report}
+%packages
+\usepackage{makeidx}
+\usepackage[portuges]{babel}
+\usepackage{fancyhdr}
+\usepackage{lipsum} % for dummy text
+\usepackage{enumitem}
+\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
+% Figures
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{framed}
+% Required for custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+% hyperlinks
+\usepackage{url}
+\usepackage{hyperref}
+% Math
+\usepackage{amssymb,amsbsy,amsmath}
+\usepackage{amsthm} %para poder definir newtheorem
+\usepackage{amsfonts} %para poder fazer o R, Z etc \mathbb{R}	\mathbb{Z} 
+
+%estilo de página
+\pagestyle{fancy}
+			\lhead{Trabalho Prático de Matemática Discreta}
+			\chead{ }
+			\rhead{	\includegraphics[height=0.45cm]{Figuras/PPorto-peq}}
+			\lfoot{\hrule }
+			\cfoot{}
+			\rfoot{\hrule \vspace*{5pt} \thepage}
+	
+%\renewcommand{\chaptermark}[1]{olaallalal}
+
+
+\linespread{1.5}    							% espaçamento entre linhas
+\setlength{\parindent}{0pt} 					% espaço horizontal aquando a mudança de paragrafo
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}% espaço vertical entre parágrafos
+\setlength{\headheight}{17pt}
+\newcommand{\Lower}[1]{\smash {\lower 1.5ex \hbox{#1}}}
+
+\usepackage{titlesec}
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Huge%\itshape
+} % format
+{%Story No. \ \thechapter
+} % label
+{0.5ex} % sep
+{
+%    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    %\centering
+} % before-code
+[
+%\vspace{-0.5ex}%
+%\rule{\textwidth}{0.3pt}
+] % after-code
+%__________________________________________________________________________________________________________
+\begin{document}
+
+
+
+\input{Capa}
+\setcounter{footnote}{0}
+
+%Página em branco - verso da Capa
+\newpage\thispagestyle{empty}
+
+%Índice
+\tableofcontents
+% Lista de Figuras
+\listoffigures
+% Lista de Tabelas
+\listoftables
+
+%Página em branco - verso do índice
+\newpage\thispagestyle{empty}
+
+%__________________________________________________________________________________________________________
+% Pergunta 1
+\input{Pergunta1}
+
+%__________________________________________________________________________________________________________
+% Pergunta 2
+\input{Pergunta2}
+
+\end{document}
