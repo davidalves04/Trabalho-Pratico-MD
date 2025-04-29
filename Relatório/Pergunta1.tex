@@ -30,11 +30,10 @@ Estes conjuntos cumprem:
     \#A = 7, \quad \#B = 17
     \]
 
-    \item[b)] Complemento de \(A\) em relação a \(U\):
+    \item[b)] Complemento de B:
     \[
-    \bar{A} = U \setminus A = \{1, 2, 4, 6, 7, 8, 10, 12, 14, 15, 16, 18, 20\}
+    \bar{B} = \{1, 19, 20\}
     \]
-
     \item[c)] União:
     \[
     A \cup B = \{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19\}
@@ -55,73 +54,35 @@ Estes conjuntos cumprem:
     (A \setminus B) \cup (B \setminus A) = \{2, 4, 6, 7, 8, 10, 12, 14, 15, 16, 18, 19\}
     \]
 
-    \item[g)] \(A \oplus \bar{B} \cup (A - B)\):
+    \item[g)] \(\overline{A \oplus {B}} \cup (A - B)\):
 
-    Calculando primeiro \(\bar{B} = U \setminus B = \{1, 19, 20\}\)
+    Calculou-se primeiro o  $\overline{A \oplus B}$:
 
     \[
-    A \oplus \bar{B} = \{1, 3, 5, 9, 11, 13, 17, 20\}
+   \overline{A \oplus {B}} =U -  A \oplus {B} =\{1,3,5,9,11,13,17,20\}
     \]
-
+De seguida:
     \[
     A - B = \{19\}
     \]
+Por fim, realizou-se a reunião
 
     \[
-    Resultado final: \{1, 3, 5, 9, 11, 13, 17, 19, 20\}
+    Resultado final: \{1,3,5,9,11,13,17,19,20\}
     \]
 
     \item[h)] Produto cartesiano \(B \times A\):
 
-    Apenas os 5 primeiros pares:
+    Como existem no total 119 pares (17x7), selecionaram-se apenas os 5 primeiros pares:
     \[
     \{(2,3), (2,5), (2,9), (2,11), (2,13), \ldots\}
     \]
 
     \item[i)] Produto cartesiano \(A \times A \times A\):
 
-    Apenas os 5 primeiros trios:
+      Como existem no total 343 trios (7$^{3}$), selecionaram-se apenas os 5 primeiros trios:
     \[
     \{(3,3,3), (3,3,5), (3,3,9), (3,3,11), (3,3,13), \ldots\}
     \]
 \end{enumerate}
 
-\subsection*{Código Scilab Usado}
-
-\begin{lstlisting}[language=Scilab, basicstyle=\small\ttfamily, breaklines=true]
-U = 1:20;
-A = [3, 5, 9, 11, 13, 17, 19];
-B = [2:18];
-
-length(A)
-length(B)
-
-Ac = setdiff(U, A)
-unionAB = union(A, B)
-interAB = intersect(A, B)
-diffBA = setdiff(B, A)
-
-diffAB = setdiff(A, B)
-diffBA = setdiff(B, A)
-symDiff = union(diffAB, diffBA)
-
-Bc = setdiff(U, B)
-symDiff2 = union(setdiff(A, Bc), setdiff(Bc, A))
-resG = union(symDiff2, diffAB)
-
-cartProd = [];
-for i = 1:length(B)
-    for j = 1:length(A)
-        cartProd($+1,:) = [B(i), A(j)];
-    end
-end
-
-A3 = [];
-for i = 1:length(A)
-    for j = 1:length(A)
-        for k = 1:length(A)
-            A3($+1,:) = [A(i), A(j), A(k)];
-        end
-    end
-end
-\end{lstlisting}

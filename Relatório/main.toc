@@ -1,0 +1,3 @@
+\babel@toc {portuges}{}\relax 
+\contentsline {chapter}{\numberline {1}Pergunta 1}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Pergunta 2}{13}{chapter.2}%

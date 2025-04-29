@@ -1,9 +1,9 @@
 
 // Exercício Resolvido - Matemática Discreta
-// Aluno: Nome Fictício - Número: 12345
+// Aluno: Nome Fictício - Número: 8240266
 
 // Definir beta (último algarismo do número de estudante)
-beta = 7;
+beta = 6;
 
 // Escolher n tal que 50 + beta < 2n < 100 - beta
 n = 30;
@@ -21,9 +21,10 @@ disp("Resultado da alínea (a):", a);
 // Alínea (b)
 // ------------------------
 M = min(5 + beta, floor(100 / (beta + 1)));
-b = 0;
-for i = 1:M
-    b = b + ((beta + 1)/i - 1)^4;
+b = 1; // começa em 1 porque é produto, não soma
+for m = 1:M
+    i = 5 * m; // i = 5, 10, 15, ..., 5*M
+    b = b * (((beta + 1)/i) - 1)^4;
 end
 disp("Resultado da alínea (b):", b);
 
@@ -35,7 +36,7 @@ const = floor(factorial(6)/(beta + 1));  // valor constante
 for k = 1:(n - 15)
     soma = 0;
     for j = n - 5 : n
-        soma = soma + (1 + ((j + k)/200)*const);
+        soma = soma + (1 + ((j + k)/200)-const);
     end
     c = c * (3 * soma);
 end

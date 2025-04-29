@@ -1,0 +1,53 @@
+\chapter{Pergunta 3}
+Primeiramente, através de código Scilab, geramos 20 pontos aleatórios.
+
+Exemplo dos 20 pontos gerados pelo Scilab:
+
+\[
+\begin{array}{ccc}
+(6.7443, & 4.3387, & 1.1133) \\
+(3.3618, & 3.7462, & 3.0716) \\
+(0.6013, & 1.8244, & 1.6582) \\
+(3.8331, & 0.7792, & 2.1961) \\
+(3.5035, & 3.1196, & 4.9157) \\
+(0.6832, & 1.1796, & 2.4854) \\
+(3.6511, & 5.9080, & 2.6283) \\
+(2.2948, & 6.0429, & 3.4695) \\
+(0.6312, & 1.3734, & 6.8159) \\
+(6.6777, & 2.9017, & 5.4565) \\
+(6.3327, & 2.1270, & 6.8061) \\
+(3.5124, & 3.2083, & 4.2440) \\
+(6.1907, & 3.3831, & 4.5059) \\
+(6.9659, & 5.8523, & 4.9796) \\
+(3.0729, & 2.3647, & 6.0207) \\
+(4.8589, & 0.1358, & 0.7470) \\
+(5.4721, & 5.5894, & 2.8132) \\
+(0.2238, & 6.1500, & 4.2110) \\
+(1.0393, & 6.9124, & 4.4235) \\
+(0.4685, & 5.3910, & 6.7043) \\
+\end{array}
+\]
+
+Em seguida, através do código Scilab, calculámos as distâncias euclidianas entre cada par de pontos e construímos a respetiva matriz adjacente do grafo não orientado. Assegurámos também que esta é simétrica, uma vez que se trata de um grafo não orientado.
+
+
+Por fim, utilizando o algoritmo de Dijkstra, atribuímos o valor de $\beta = 9$ e $\sigma = 16$, sendo que utilizamos os números 8240839 (para $\beta$) e 8240216 (para $\sigma$) para obtermos o caminho de menor distancia percorrida.
+
+Asseguramos também que, caso $\sigma$ fosse 0, ele assumiria o valor 2; caso fosse maior que 20, assumiria o valor 10. Além disso, alteramos o valor da distância de cada ponto até o ponto $(0,0,0)$, que era de 27 cm, para 7 cm, de forma a evitar que o valor do caminho de menor distancia fosse constantemente infinito. Apenas não conseguimos garantir que a distância mínima entre o ponto inicial e o ponto final fosse de, pelo menos, 50 cm, pois, independentemente dos valores de beta e sigma escolhidos, não conseguimos alcançar a distância mínima requerida.
+
+
+
+O resultado do caminho de menor distância percorrida , de acordo com os 20 pontos gerados, obtida conforme o código do Scilab:
+
+ \section*{Caminho de menor distancia:} Caminho 6 - Caminho 16 
+ \\
+ \section*{Distancia total:} 4.6419159 cm
+
+
+
+
+
+
+
+
+

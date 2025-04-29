@@ -36,25 +36,26 @@ Agora, escolhemos $n = 30$, de forma que satisfaça a condição $50 + \beta < 2
      \[
     \sum_{j= 8}^{30} \left( \frac{-12 - 1}{5} \right)^j = 2.032 \times 10^{12}
     \]
+A sequência dos termos forma uma progressão geométrica com razão $\frac{-13}{5}$
 
 
    \item[b)]
    Queremos calcular o somatório:
    \[
-\prod_{i \in C} \left( \frac{\beta + 1}{i - 1} \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right)
+\prod_{i \in C} \left( \frac{\beta + 1}{i } -1\right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right)
 \]
     Para \(\beta = 6\) e \(n = 30\), temos:
      \[
-\prod_{i \in C} \left( \frac{6 + 1}{i - 1} \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) 
+\prod_{i \in C} \left( \frac{6 + 1}{i } -1\right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) 
 \]
  = \[
-\prod_{i \in C} \left( \frac{7}{i - 1} \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) 
+\prod_{i \in C} \left( \frac{7}{i }-1 \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) 
 \]
 
 \section*{Resultado utilizando  código scilab:}
 
 \[
-\prod_{i \in C} \left( \frac{7}{i - 1} \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) = 1338.5940
+\prod_{i \in C} \left( \frac{7}{i } -1 \right)^4, \quad C = \left\{ 5m \in \mathbb{Z}: m = 1, \dots, M \right\}, \quad M = \min \left( 5 + \beta, \left\lceil \frac{100}{\beta + 1} \right\rceil \right) = 8.513^{-9}
 \]
  
 
@@ -78,7 +79,7 @@ Agora, escolhemos $n = 30$, de forma que satisfaça a condição $50 + \beta < 2
 
 \section*{Resultado utilizando  código scilab:}
 \[
-\prod_{k=1}^{15} \left( 3 \times \sum_{j=25}^{30} \left( \left\lfloor 1 + \frac{j + k}{200} \right\rfloor - \left\lceil \frac{6!}{7} \right\rceil \right) \right) =  1.006 \times 10^{38}
+\prod_{k=1}^{15} \left( 3 \times \sum_{j=25}^{30} \left( \left\lfloor 1 + \frac{j + k}{200} \right\rfloor - \left\lceil \frac{6!}{7} \right\rceil \right) \right) = -7.629 \times 10^{48}
 \] 
 
 
@@ -87,43 +88,3 @@ Agora, escolhemos $n = 30$, de forma que satisfaça a condição $50 + \beta < 2
 \end{enumerate}
 
 
-\section*{Código Scilab Utilizado:}
-
-\subsection*{Parâmetros Iniciais}
-\begin{verbatim}
-beta = 6;  // Último algarismo do número do estudante
-n = 30;    // Escolha de n tal que 50 + beta < 2n < 100 - beta
-\end{verbatim}
-
-\subsection*{Alínea (a)}
-\begin{verbatim}
-a = 0;
-for j = beta + 2 : n
-    a = a + ((-2*beta - 1)/5)^j;
-end
-disp("Resultado da alínea (a):", a);
-\end{verbatim}
-
-\subsection*{Alínea (b)}
-\begin{verbatim}
-M = min(5 + beta, floor(100 / (beta + 1)));
-b = 0;
-for i = 1:M
-    b = b + ((beta + 1)/i - 1)^4;
-end
-disp("Resultado da alínea (b):", b);
-\end{verbatim}
-
-\subsection*{Alínea (c)}
-\begin{verbatim}
-c = 1;
-const = floor(factorial(6)/(beta + 1));  // valor constante
-for k = 1:(n - 15)
-    soma = 0;
-    for j = n - 5 : n
-        soma = soma + (1 + ((j + k)/200)*const);
-    end
-    c = c * (3 * soma);
-end
-disp("Resultado da alínea (c):", c);
-\end{verbatim}
