@@ -1,4 +1,4 @@
-U = 1:20;
+U = 1:20; //Universo de elementos de 1 a 20
 
 //Subconjuntos A e B
 A = [3, 5, 9, 11, 13, 17, 19];  // 7 elementos
