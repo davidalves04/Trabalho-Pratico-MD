@@ -4,7 +4,7 @@
 clc; //Limpa o ecrã
 clear; //Limpa as variáveis
 n_points = 20;
-max_value = 27; //Valor máximo para coordenadas
+max_value = 27; //Valor máximo para as coordenadas
 points = [];
 
 while size(points,1) < n_points
