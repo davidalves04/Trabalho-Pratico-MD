@@ -1,53 +1,63 @@
 \chapter{Pergunta 3}
-Primeiramente, através de código Scilab, geramos 20 pontos aleatórios.
+\section*{Alínea A}
 
-Exemplo dos 20 pontos gerados pelo Scilab:
+Com base nos números de estudante \textbf{8240231} e \textbf{8240266}, foram utilizados os valores de \(\beta = 1\) e \(\sigma = 66\).
 
-\[
-\begin{array}{ccc}
-(6.7443, & 4.3387, & 1.1133) \\
-(3.3618, & 3.7462, & 3.0716) \\
-(0.6013, & 1.8244, & 1.6582) \\
-(3.8331, & 0.7792, & 2.1961) \\
-(3.5035, & 3.1196, & 4.9157) \\
-(0.6832, & 1.1796, & 2.4854) \\
-(3.6511, & 5.9080, & 2.6283) \\
-(2.2948, & 6.0429, & 3.4695) \\
-(0.6312, & 1.3734, & 6.8159) \\
-(6.6777, & 2.9017, & 5.4565) \\
-(6.3327, & 2.1270, & 6.8061) \\
-(3.5124, & 3.2083, & 4.2440) \\
-(6.1907, & 3.3831, & 4.5059) \\
-(6.9659, & 5.8523, & 4.9796) \\
-(3.0729, & 2.3647, & 6.0207) \\
-(4.8589, & 0.1358, & 0.7470) \\
-(5.4721, & 5.5894, & 2.8132) \\
-(0.2238, & 6.1500, & 4.2110) \\
-(1.0393, & 6.9124, & 4.4235) \\
-(0.4685, & 5.3910, & 6.7043) \\
-\end{array}
-\]
+Foram geradas 20 coordenadas tridimensionais (X, Y, Z) aleatórias no intervalo \([-27, 27]\), utilizando a função \texttt{rand()}.
 
-Em seguida, através do código Scilab, calculámos as distâncias euclidianas entre cada par de pontos e construímos a respetiva matriz adjacente do grafo não orientado. Assegurámos também que esta é simétrica, uma vez que se trata de um grafo não orientado.
+As coordenadas obtidas foram:
 
+\begin{verbatim}
+   13.421736  -4.8380814   5.8564422
+   23.016656   3.6029409   3.8428503
+  -20.253562  12.3078000 -12.5400610
+  -13.218089   6.7601487 -20.7499460
+    6.031822   9.6333639  -9.0714855
+  -25.602966   0.9421284  -5.8488845
+  -13.966893   0.3479484  -4.1250492
+  -11.373871 -22.2051660   6.5495615
+   -8.343084  11.1502850   1.1419515
+  -11.499835   8.1150934 -22.2407920
+   -2.706678  12.0271670  21.4747000
+    0.370086   1.2580726   3.2235170
+    3.333458  -1.7184959  15.0905520
+   -4.012889 -13.7075730  22.8394750
+  -21.595973  -1.7376222  -5.6673126
+    4.293108 -12.8080030  -3.4506722
+  -13.011687  -4.6489286  -7.5603900
+   10.329055  14.3470370  -7.7076919
+   14.544359   2.5792231 -21.8036410
+    8.431460 -13.7940900   1.5288673
+\end{verbatim}
 
-Por fim, utilizando o algoritmo de Dijkstra, atribuímos o valor de $\beta = 9$ e $\sigma = 16$, sendo que utilizamos os números 8240839 (para $\beta$) e 8240216 (para $\sigma$) para obtermos o caminho de menor distancia percorrida.
+\section*{Alínea B}
 
-Asseguramos também que, caso $\sigma$ fosse 0, ele assumiria o valor 2; caso fosse maior que 20, assumiria o valor 10. Além disso, alteramos o valor da distância de cada ponto até o ponto $(0,0,0)$, que era de 27 cm, para 7 cm, de forma a evitar que o valor do caminho de menor distancia fosse constantemente infinito. Apenas não conseguimos garantir que a distância mínima entre o ponto inicial e o ponto final fosse de, pelo menos, 50 cm, pois, independentemente dos valores de beta e sigma escolhidos, não conseguimos alcançar a distância mínima requerida.
+Com base nas coordenadas geradas, foi construída a matriz de adjacência do grafo tridimensional, onde cada aresta entre dois vértices \(i\) e \(j\) foi definida apenas se a distância euclidiana entre os pontos for inferior ao valor de \(\sigma = 66\). O peso das arestas corresponde à distância entre os pontos.
 
+A matriz de adjacência resultante (valores arredondados para 7 casas decimais) contém a maioria dos elementos a zero, indicando poucas conexões no grafo. Exemplo:
 
+\begin{verbatim}
+... 
+(10,4) = 2.6478092
+(15,6) = 4.8239020
+(4,10) = 2.6478092
+(6,15) = 4.8239020
+...
+\end{verbatim}
 
-O resultado do caminho de menor distância percorrida , de acordo com os 20 pontos gerados, obtida conforme o código do Scilab:
+Todos os outros elementos da matriz são zero, o que indica a existência de apenas duas arestas no grafo (ambas bidirecionais).
 
- \section*{Caminho de menor distancia:} Caminho 6 - Caminho 16 
- \\
- \section*{Distancia total:} 4.6419159 cm
+\section*{Alínea C}
 
+A determinação do caminho mais curto entre dois nós do grafo foi realizada com o algoritmo de Dijkstra. O nó de origem foi determinado pelo último algarismo do número de estudante (\(\beta = 1\) e o nó de destino pelo valor de \(\sigma = 66\)). No entanto, como , foi aplicado o seguinte critério de ajuste:
+\newline
+\(\sigma = 10\) (caso \(\sigma > 20\)).
 
+Como o valor da distância entre os nós  e  foi infinito, conclui-se que não existe caminho entre os dois pontos selecionados:
+\begin{center}
+\textit{"Não existe caminho entre os pontos selecionados."}
+\end{center}
 
+\bigskip
 
-
-
-
-
-
+\noindent Assim, o grafo gerado com os dados definidos não contém um caminho entre os vértices indicados.

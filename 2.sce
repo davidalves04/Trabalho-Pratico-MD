@@ -1,6 +1,6 @@
-//Número de aluno em consideração: 8240231
+//Número de aluno em consideração: 8240266
 
-beta = 1;
+beta = 6;
 
 //Escolha de n tal que 50 + beta < 2n < 100 - beta
 n = 30;

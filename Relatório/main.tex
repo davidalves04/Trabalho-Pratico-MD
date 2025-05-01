@@ -20,7 +20,12 @@
 % Math
 \usepackage{amssymb,amsbsy,amsmath}
 \usepackage{amsthm} %para poder definir newtheorem
-\usepackage{amsfonts} %para poder fazer o R, Z etc \mathbb{R}	\mathbb{Z} 
+\usepackage{amsfonts} %para poder fazer o R, Z etc \mathbb{R}	\mathbb{Z}
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{-20pt}{10pt}
+\titleformat{\section}
+  {\normalsize\bfseries}
+{}{0pt}{}
 
 %estilo de página
 \pagestyle{fancy}
@@ -71,24 +76,24 @@
 
 %Índice
 \tableofcontents
-% Lista de Figuras
-\listoffigures
-% Lista de Tabelas
-\listoftables
 
 %Página em branco - verso do índice
 \newpage\thispagestyle{empty}
 
-%__________________________________________________________________________________________________________
 % Pergunta 1
 \input{Pergunta1}
 
-%__________________________________________________________________________________________________________
 % Pergunta 2
 \input{Pergunta2}
 
-%__________________________________________________________________________________________________________
 % Pergunta 3
 \input{Pergunta3}
+
+\nocite{*}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{plainnat}
+\bibliography{references}
 
 \end{document}
