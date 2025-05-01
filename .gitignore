@@ -9,3 +9,11 @@ Relatório/main.out
 Relatório/main.synctex.gz
 Relatório/main.toc
 Relatório/main.blg
+Relatório/main.aux
+*.aux
+*.fls
+*.log
+*.out
+*.lot
+*.toc
+*.gz
