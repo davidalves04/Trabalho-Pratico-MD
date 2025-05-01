@@ -1,3 +1,5 @@
+//Números de aluno em consideração: 8240231 e 8240266
+
 // Alínea A
 clc; //Limpa o ecrã
 clear; //Limpa as variáveis
