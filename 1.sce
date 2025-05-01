@@ -1,10 +1,8 @@
-//Problema 1
-
 U = 1:20;
 
-// Subconjuntos A e B válidos
-A = [3, 5, 9, 11, 13, 17, 19];                 // 7 elementos
-B = [2:18];                                    // 17 elementos
+//Subconjuntos A e B
+A = [3, 5, 9, 11, 13, 17, 19];  // 7 elementos
+B = [2:18]; // 17 elementos
 
 //a)- Cardinalidade
 disp("a)");
@@ -17,25 +15,25 @@ Ac = setdiff(U, A);
 disp("Complemento de A:");
 disp(Ac);
 
-//c)- União
+//c)- União de A e B
 disp("c)");
 unionAB = union(A, B);
 disp("A ∪ B:");
 disp(unionAB);
 
-//d)- Interseção
+//d)- Interseção de A e B
 disp("d)");
 interAB = intersect(A, B);
 disp("A ∩ B:");
 disp(interAB);
 
-//e)- Diferença B - A
+//e)- Diferença de B - A
 disp("e)");
 diffBA = setdiff(B, A);
 disp("B - A:");
 disp(diffBA);
 
-// f) Diferença simétrica A ⊕ B
+//f) Diferença simétrica A ⊕ B
 disp("f)");
 diffAB = setdiff(A, B);
 diffBA = setdiff(B, A);
@@ -51,7 +49,7 @@ resG = union(symDiff2, diffAB);
 disp("A ⊕ B̅ ∪ (A - B):");
 disp(resG);
 
-//h)- Produto cartesiano B × A
+//h)- Produto cartesiano de B × A
 disp("h)");
 cartProd = [];
 for i = 1:length(B)
@@ -60,9 +58,9 @@ for i = 1:length(B)
     end
 end
 disp("B × A:");
-disp(cartProd(1:10,:)); // Mostra apenas os 10 primeiros pares
+disp(cartProd(1:10,:)); //Mostra apenas os 10 primeiros pares
 
-//i)- Produto cartesiano A × A × A
+//i)- Produto cartesiano de A × A × A
 disp("i)");
 A3 = [];
 for i = 1:length(A)
@@ -73,4 +71,4 @@ for i = 1:length(A)
     end
 end
 disp("A³:");
-disp(A3(1:10,:)); // Mostra apenas os 10 primeiros trios
+disp(A3(1:10,:));   //Mostra apenas os 10 primeiros trios

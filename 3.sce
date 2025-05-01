@@ -22,7 +22,7 @@ n = size(points, 1);
 adj = zeros(n, n); //Matriz de adjacência inicializada com zeros
 edge_count = 0;
 max_edges = 100;
-edge_limit = 5; //distância máxima entre dois pontos que estão ligados
+edge_limit = 5; //Distância máxima entre dois pontos que estão ligados
 
 for i = 1:n-1
     for j = i+1:n
@@ -49,7 +49,7 @@ if sigma > 20 then sigma = 10; end
 start_node = beta;
 end_node = sigma;
 
-// Função Dijkstra
+//Função Dijkstra
 function [dist, prev] = dijkstra(adj, start)
     n = size(adj,1);
     dist = ones(1,n) * %inf;
