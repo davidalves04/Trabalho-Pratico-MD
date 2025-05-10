@@ -1,8 +1,6 @@
 \chapter{Pergunta 3}
 \section*{Alínea A}
 
-Com base nos números de estudante \textbf{8240231} e \textbf{8240266}, foram utilizados os valores de \(\beta = 1\) e \(\sigma = 66\).
-
 Foram geradas 20 coordenadas tridimensionais (X, Y, Z) aleatórias no intervalo \([-27, 27]\), utilizando a função \texttt{rand()}.
 
 As coordenadas obtidas foram:
@@ -32,8 +30,6 @@ As coordenadas obtidas foram:
 
 \section*{Alínea B}
 
-Com base nas coordenadas geradas, foi construída a matriz de adjacência do grafo tridimensional, onde cada aresta entre dois vértices \(i\) e \(j\) foi definida apenas se a distância euclidiana entre os pontos for inferior ao valor de \(\sigma = 66\). O peso das arestas corresponde à distância entre os pontos.
-
 A matriz de adjacência resultante (valores arredondados para 7 casas decimais) contém a maioria dos elementos a zero, indicando poucas conexões no grafo. Exemplo:
 
 \begin{verbatim}
@@ -48,12 +44,12 @@ A matriz de adjacência resultante (valores arredondados para 7 casas decimais) 
 Todos os outros elementos da matriz são zero, o que indica a existência de apenas duas arestas no grafo (ambas bidirecionais).
 
 \section*{Alínea C}
-
-A determinação do caminho mais curto entre dois nós do grafo foi realizada com o algoritmo de Dijkstra. O nó de origem foi determinado pelo último algarismo do número de estudante (\(\beta = 1\) e o nó de destino pelo valor de \(\sigma = 66\)). No entanto, como , foi aplicado o seguinte critério de ajuste:
+A determinação do caminho mais curto entre dois nós do grafo foi realizada com o algoritmo de Dijkstra. Com base nos números de estudante \textbf{8240231} e \textbf{8240266}, foram utilizados os valores de \(\beta = 1\) e \(\sigma = 66\), que foram determinados pelo último algarismo de cada número.
+No entanto, como , foi aplicado o seguinte critério de ajuste:
 \newline
 \(\sigma = 10\) (caso \(\sigma > 20\)).
 
-Como o valor da distância entre os nós  e  foi infinito, conclui-se que não existe caminho entre os dois pontos selecionados:
+Como o valor da distância entre os nós foi infinito, conclui-se que não existe caminho entre os dois pontos selecionados:
 \begin{center}
 \textit{"Não existe caminho entre os pontos selecionados."}
 \end{center}
